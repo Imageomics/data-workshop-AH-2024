@@ -11,7 +11,6 @@ Repository for Mastering Data Management Workshop at the Imageomics All Hands 20
     conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab scikit-learn datasets pillow -y
     ```
 3. Clone this repository to your local machine.
-
 ## Key Learning Objectives
 
 - **_Provenance_**
