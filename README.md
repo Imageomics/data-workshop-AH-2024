@@ -5,7 +5,7 @@ Repository for Mastering Data Management Workshop at the Imageomics All Hands 20
 ## Before the Workshop
 
  Please make sure to bring your computer to the workshop with the following actions completed:
- 1. Install Conda
+ 1. Install [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
  2. Create a conda environment on your machine with all required packages: Open a terminal/command line window and run:
     ```bash
     conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab scikit-learn datasets -y
