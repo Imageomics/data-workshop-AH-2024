@@ -1,6 +1,10 @@
 # Mastering Data Management Workshop - All Hands 2024
-Repository for Mastering Data Management Workshop at the Imageomics All Hands 2024: April 16th, 8:30am to 11:45am ET.
+Repository for Mastering Data Management Workshop at the Imageomics All Hands 2024.
 
+**When**: April 16th, 8:30am to 11:45am ET.
+**Where**: Collaborative Space in Pomerene Hall (3rd Floor).
+
+This session will be interactive; bring your laptop ready to go (as described below).
 
 ## Before the Workshop
 
@@ -18,6 +22,8 @@ Navigate into the workshop repository, retrieve any updates, activate the enviro
 
 ```bash
 cd ~/data-workshop-AH-2024 # or wherever you have it stored
+```
+```bash
 git pull origin main
 conda activate data-workshop-2024
 jupyter lab
