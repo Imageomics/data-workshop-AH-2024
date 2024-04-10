@@ -14,7 +14,9 @@ This session will be interactive; bring your laptop ready to go (as described be
     ```bash
     conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab scikit-learn datasets pillow -y
     ```
-3. Clone this repository to your local machine.
+3. Clone this repository to the home directory of your local machine.
+
+> Note: We will use Unix commands in the workshop. If you are using Windows, you can use Git Bash to run these commands.
 
 ## During the Workshop
 
