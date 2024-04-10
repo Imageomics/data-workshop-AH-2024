@@ -1,8 +1,8 @@
 # Mastering Data Management Workshop - All Hands 2024
 Repository for Mastering Data Management Workshop at the Imageomics All Hands 2024.
 
-**When**: April 16th, 8:30am to 11:45am ET.
-**Where**: Collaborative Space in Pomerene Hall (3rd Floor).
+- **When**: April 16th, 8:30am to 11:45am ET.
+- **Where**: Collaborative Space in Pomerene Hall (3rd Floor).
 
 This session will be interactive; bring your laptop ready to go (as described below).
 
