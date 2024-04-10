@@ -11,6 +11,18 @@ Repository for Mastering Data Management Workshop at the Imageomics All Hands 20
     conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab scikit-learn datasets pillow -y
     ```
 3. Clone this repository to your local machine.
+
+During the Workshop
+
+Navigate into the workshop repository, retrieve any updates, activate the environment, and launch a Jupyter notebook:
+
+cd ~/data-workshop-AH-2024 # or wherever you have it stored
+git pull origin main
+conda activate data-workshop-2024
+jupyter lab
+
+Follow along with the hands-on instructions.
+
 ## Key Learning Objectives
 
 - **_Provenance_**
