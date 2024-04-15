@@ -18,7 +18,7 @@ df["uuid"] = [uuid.uuid4() for i in range(df.shape[0])]
 
 This can be done with checksums, though be sure to open all images with the same package (eg., PIL) as this can impact the _intrinsic_ metadata, though it will not impact the image content. MD5s check both.
 
-For more on this, see the `implementation_details` notebook.
+For more on this, see the `further_reading` notebook.
 
 ### Ensure Provenance is trackable for all images
 
