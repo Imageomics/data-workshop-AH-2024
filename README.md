@@ -46,11 +46,6 @@ Follow along with the hands-on instructions.
     - How and where to document information about data.
     - _Always_ record assumptions.
 
-
-# Post-Workshop Use
-
-How to use this repo post-workshop: If you missed the workshop or would like to review the materials, there are both blank and complete versions of the notebooks completed during the workshop available in this repo. There is also a [`further_reading` folder](https://github.com/Imageomics/data-workshop-AH-2024/tree/main/further_reading) with more information on topics covered during the workshop, as well as resources to learn more.
-
 ## Story of the Workshop
 
 Last semester/year, Shaggy did a project predicting the sex of butterflies based on images. The `Shaggy` folder is his repo; it contains the collection of images that he used, along with a notebook for generating the dataset, a CSV, and a README pointing to the original source (a toy dataset we created for this lesson). You want to build on Shaggy's work, so you go to look at his data and fill in a [Dataset Card](https://github.com/Imageomics/internal-guidelines/blob/main/templates/HF_DatasetCard_Template_Imageomics.md?plain=1) with more information (for non-Imageomics members, see the template in the `Files` folder to get a copy of the template as of April 2024). 
@@ -71,7 +66,13 @@ This new CSV is passed to Velma, along with the Dataset Card from the initial ex
 
 The `Velma` folder is entirely self-contained, though the README and data file (`kydoimos.csv`) are created in the first two parts of the workshop. There are complete versions of the README and notebook as done during the workshop (as well as an earlier completed version with a paired `py` file). A recording of this part of the workshop--where we explore the data, clean it (standardizing terms and removing duplicates), and generate splits--can be found [here](); it is an hour and 15 minutes long.
 
+
+# Post-Workshop Use
+
+How to use this repo post-workshop: If you missed the workshop or would like to review the materials, there are both blank and complete versions of the notebooks completed during the workshop available in this repo. There is also a [`further_reading` folder](https://github.com/Imageomics/data-workshop-AH-2024/tree/main/further_reading) with more information on topics covered during the workshop, as well as resources to learn more.
+
+
 # Images
 
-All images in [`Shaggy/images/`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images) are public domain, sourced from [(Hoyal-Cuthill, et al., 2019)](https://doi.org/10.5061/dryad.2hp1978), _**except**_ [`thelxiopeia_13.tif`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images/thelxiopeia_13.tif) which was sourced from [this website](https://www.scoobydudes.com/episode-17-scoobra-kadoobra) and is copyrighted by [Hanna-Barbera and Warner Bros. Entertainment](https://scoobydoo.fandom.com/wiki/Scoobypedia:Legal_Disclaimer).
+All images in [`Shaggy/images/`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images) are public domain, sourced from [(Hoyal Cuthill et al., 2019)](https://doi.org/10.5061/dryad.2hp1978), _**except**_ [`thelxiopeia_13.tif`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images/thelxiopeia_13.tif) which was sourced from [this website](https://www.scoobydudes.com/episode-17-scoobra-kadoobra) and is copyrighted by [Hanna-Barbera and Warner Bros. Entertainment](https://scoobydoo.fandom.com/wiki/Scoobypedia:Legal_Disclaimer).
 
