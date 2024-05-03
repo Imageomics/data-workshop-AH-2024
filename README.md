@@ -12,7 +12,7 @@ This session will be interactive; bring your laptop ready to go (as described be
  1. Install [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
  2. Create a conda environment on your machine with all required packages: Open a terminal/command line window and run:
     ```bash
-    conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab ipywidgets scikit-learn datasets pillow seaborn -y
+    conda create -n data-workshop-2024 -c conda-forge pandas jupyterlab ipywidgets scikit-learn datasets pillow seaborn opencv -y
     ```
 3. Clone this repository to the home directory of your local machine.
 
