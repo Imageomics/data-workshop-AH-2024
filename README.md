@@ -64,7 +64,7 @@ In `Fred/mystery-thickens.ipynb`, we learn about duplication in both Shaggy's da
 
 This new CSV is passed to Velma, along with the Dataset Card from the initial exploration of Shaggy's data to explore and re-create a dataset to predict the sex of butterflies based on images.
 
-The `Velma` folder is entirely self-contained, though the README and data file (`kydoimos.csv`) are created in the first two parts of the workshop. There are complete versions of the README and notebook as done during the workshop (as well as an earlier completed version with a paired `py` file). A recording of this part of the workshop--where we explore the data, clean it (standardizing terms and removing duplicates), and generate splits--can be found [here](); it is an hour and 15 minutes long.
+The `Velma` folder is entirely self-contained, though the README and data file (`kydoimos.csv`) are created in the first two parts of the workshop. There are complete versions of the README and notebook as done during the workshop (as well as an earlier completed version with a paired `py` file). A recording of this part of the workshop--where we explore the data, clean it (standardizing terms and removing duplicates), and generate splits--can be found on the [Imageomics YouTube Channel](https://www.youtube.com/@ImageomicsInstitute/videos); it is an hour and 15 minutes long.
 
 
 # Post-Workshop Use
