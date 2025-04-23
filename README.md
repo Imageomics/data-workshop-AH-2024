@@ -48,7 +48,7 @@ Follow along with the hands-on instructions.
 
 ## Story of the Workshop
 
-Last semester/year, Shaggy did a project predicting the sex of butterflies based on images. The `Shaggy` folder is his repo; it contains the collection of images that he used, along with a notebook for generating the dataset, a CSV, and a README pointing to the original source (a toy dataset we created for this lesson). You want to build on Shaggy's work, so you go to look at his data and fill in a [Dataset Card](https://github.com/Imageomics/internal-guidelines/blob/main/templates/HF_DatasetCard_Template_Imageomics.md?plain=1) with more information (for non-Imageomics members, see the template in the `Files` folder to get a copy of the template as of April 2024). 
+Last semester/year, Shaggy did a project predicting the sex of butterflies based on images. The `Shaggy` folder is his repo; it contains the collection of images that he used, along with a notebook for generating the dataset, a CSV, and a README pointing to the original source (a toy dataset we created for this lesson). You want to build on Shaggy's work, so you go to look at his data and fill in a [Dataset Card](https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/) with more information (alternatively, see the template in the `Files` folder to get a copy of the template as of April 2024).
 
 Looking at Shaggy's work, you discover that the notebook _cannot_ be run:
 - the source file is missing,

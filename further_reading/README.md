@@ -31,10 +31,11 @@ This ensures the reproducibility of your dataset and that appropriate credit is 
 
 
 ## Resources
-- [Imageomics Internal Guidelines Repo](https://github.com/Imageomics/internal-guidelines)
-    - [HF templates](https://github.com/Imageomics/internal-guidelines/tree/main/templates): Dataset and Model Card templates for Imageomics Datasets and Models. These include some general keywords, grant acknowledgement, and general guidance and recommendations for various sections, along with some HF-flavored markdown tips.
+- [Imageomics Guide](https://imageomics.github.io/Imageomics-guide/)
+    - [HF templates](https://imageomics.github.io/Imageomics-guide/wiki-guide/About-Templates/): Dataset and Model Card templates for Imageomics Datasets and Models. These include some general keywords, grant acknowledgement, and general guidance and recommendations for various sections, along with some HF-flavored markdown tips.
         - We covered the sections of a Dataset Card pertaining to information about the data itself, but don't forget about the other sections for a real dataset or model!
         - The `yaml` portion at the top is a place to add keywords and other useful information to help index your model or dataset in searches on Hugging Face (eg., by size, task, and license).
-        - Adding an appropriate [license](https://github.com/Imageomics/internal-guidelines/wiki/3.2.-Hugging-Face-Repo-Guide#license) and citation allow others to re-use and then properly cite your model or dataset more easily.
-    - [Wiki](https://github.com/Imageomics/internal-guidelines/wiki): Repo guides, Workflows, and more!
+        - Adding an appropriate [license](https://imageomics.github.io/Imageomics-guide/wiki-guide/GitHub-Repo-Guide/#license) and citation allow others to re-use and then properly cite your model or dataset more easily.
+    - [GitHub](https://imageomics.github.io/Imageomics-guide/wiki-guide/GitHub-Repo-Guide/) and [Hugging Face](https://imageomics.github.io/Imageomics-guide/wiki-guide/Hugging-Face-Repo-Guide/) Pages: Repo guides, Workflows, and more!
+    - [FAIR Guide](https://imageomics.github.io/Imageomics-guide/wiki-guide/FAIR-Guide/): Includes checklists to ensure code, model, and data repositories align with FAIR principles and best-practices for reproducibility.
 - Overview and further reading on [FAIR Principles](https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair) from the [Turing Way](https://book.the-turing-way.org/).
