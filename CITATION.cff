@@ -20,7 +20,7 @@ identifiers:
     value: "https://github.com/Imageomics/data-workshop-AH-2024/releases/tag/v1.0.0"
   - description: "The GitHub URL of the commit tagged with v1.0.0."
     type: url
-    value: "https://github.com/Imageomics/data-workshop-AH-2024/tree/<commit-hash>" # update on release
+    value: "https://github.com/Imageomics/data-workshop-AH-2024/tree/12017c1d515e6b243e6b4256a31f377d0538bb11"
 keywords:
   - imageomics
   - EDA
@@ -35,4 +35,4 @@ message: "If you find this workshop helpful in your research, please cite it as 
 repository-code: "https://github.com/Imageomics/data-workshop-AH-2024"
 title: "Mastering Data Management Workshop - All Hands 2024"
 version: "1.0.0"
-doi: # update on release
+doi: "10.5281/zenodo.17429276"
