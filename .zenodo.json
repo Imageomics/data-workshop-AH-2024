@@ -1,0 +1,44 @@
+{
+    "creators": [
+      {
+            "name": "Bradley, John",
+            "orcid": "0000-0003-3858-848X",
+            "affiliation": "Duke University"
+      },
+      {
+          "name": "Campolongo, Elizabeth",
+          "orcid": "0000-0003-0846-2413",
+          "affiliation": "The Ohio State University"
+      },
+      {
+            "name": "Lapp, Hilmar",
+            "orcid": "0000-0001-9107-0714",
+            "affiliation": "Duke University"
+      },
+      {
+          "name": "Thompson, Matthew",
+          "orcid": "0000-0003-0583-8585",
+          "affiliation": "The Ohio State University"
+      }      
+    ],
+    "description": "<p>Materials used for Mastering Data Management Workshop at the Imageomics All-Hands 2024.</p>",
+    "keywords": [
+      "imageomics",
+      "EDA",
+      "data analysis",
+      "data management",
+      "provenance",
+      "documentation",
+      "checksums",
+      "data validation"
+    ],
+    "title": "Mastering Data Management Workshop - All Hands 2024",
+    "version": "1.0.0",
+    "license": "CC0-1.0",
+    "publication_date": "2025-10-23",
+    "grants": [
+        {
+            "id": "021nxhr62::2118240"
+        }
+    ] 
+}
