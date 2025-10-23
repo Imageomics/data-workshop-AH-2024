@@ -1,4 +1,4 @@
-# Mastering Data Management Workshop - All Hands 2024
+# Mastering Data Management Workshop - All Hands 2024 [![DOI](https://zenodo.org/badge/784343261.svg)](https://doi.org/10.5281/zenodo.17429276)
 Repository for Mastering Data Management Workshop at the Imageomics All Hands 2024.
 
 - **When**: April 16th, 8:30am to 11:45am ET.
