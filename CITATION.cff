@@ -1,0 +1,38 @@
+abstract: "Repository for Mastering Data Management Workshop at the Imageomics All-Hands 2024."
+authors:
+- family-names: "Bradley"
+  given-names: "John"
+  orcid: "https://orcid.org/0000-0003-3858-848X"
+- family-names: "Campolongo"
+  given-names: "Elizabeth G."
+  orcid: "https://orcid.org/0000-0003-0846-2413"
+- family-names: "Thompson"
+  given-names: "Matthew J."
+  orcid: "https://orcid.org/0000-0003-0583-8585"
+- family-names: "Lapp"
+  given-names: "Hilmar"
+  orcid: "https://orcid.org/0000-0001-9107-0714"
+cff-version: 1.2.0
+date-released: "2025-10-23"
+identifiers:
+  - description: "The GitHub release URL of tag v1.0.0."
+    type: url
+    value: "https://github.com/Imageomics/data-workshop-AH-2024/releases/tag/v1.0.0"
+  - description: "The GitHub URL of the commit tagged with v1.0.0."
+    type: url
+    value: "https://github.com/Imageomics/data-workshop-AH-2024/tree/<commit-hash>" # update on release
+keywords:
+  - imageomics
+  - EDA
+  - "data analysis"
+  - "data management"
+  - provenance
+  - documentation
+  - checksums
+  - "data validation"
+license: CC0-1.0
+message: "If you find this workshop helpful in your research, please cite it as below."
+repository-code: "https://github.com/Imageomics/data-workshop-AH-2024"
+title: "Mastering Data Management Workshop - All Hands 2024"
+version: "1.0.0"
+doi: # update on release
