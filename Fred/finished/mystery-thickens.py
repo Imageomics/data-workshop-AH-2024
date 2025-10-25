@@ -6,11 +6,11 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.16.1
+#       jupytext_version: 1.18.1
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
+#     display_name: Python (dw-uv)
 #     language: python
-#     name: python3
+#     name: dw-uv
 # ---
 
 # %% [markdown]
@@ -41,11 +41,9 @@ import pandas as pd
 from datasets import load_dataset
 import os
 import hashlib
-import io
 from io import BytesIO
-from PIL import Image, UnidentifiedImageError
+from PIL import Image
 from PIL.TiffTags import TAGS
-import numpy as np
 
 # %% [markdown]
 # ## 1. Download the original/upstream/source dataset (Kydoimos) 
@@ -54,6 +52,8 @@ import numpy as np
 # The upstream dataset is on Hugging Face: https://huggingface.co/datasets/johnbradley/Kydoimos
 
 dataset_path = "johnbradley/Kydoimos"
+
+# Note that if the dataset does not load using the dataset ID above, try the following two lines instead:
 # # !git clone https://huggingface.co/datasets/johnbradley/Kydoimos ../../Kydoimos
 # dataset_path = "../../Kydoimos"
 
@@ -63,12 +63,16 @@ kydoimos = load_dataset(dataset_path)
 # ### Explore the upstream dataset
 
 # %%
+# View the upstream dataset contents
+# Note that the full dataset is in the 'train' split only because that is the default split when loading the dataset
 kydoimos
 
 # %%
+# Look at a sample image
 kydoimos['train']['image'][1]
 
 # %%
+# See that the image is a PIL object
 print(kydoimos['train']['image'][0])
 
 # %% [markdown]
@@ -76,8 +80,9 @@ print(kydoimos['train']['image'][0])
 
 # %%
 kydoimos_df = pd.DataFrame(kydoimos['train'])
+# This command loads the image data into the dataframe as a column. This is not recommended for large datasets. Since our dataset is small, it's OK.
 
-# Do this if you would rather not have the actual image data as entries in the dataframe. Since the dataset is small, it's OK.
+# To make a dataframe without the image column, use the following command instead: 
 # kydoimos_df = pd.DataFrame(kydoimos['train'].remove_columns(['image'])) 
 
 # %%
@@ -95,7 +100,7 @@ kydoimos_df.drop(columns=['image']).nunique()
 
 # %%
 # Load the metadata table into a dataframe
-shaggy_dir = '../Shaggy/'
+shaggy_dir = '../../Shaggy/'
 shaggy_df = pd.read_csv(os.path.join(shaggy_dir, 'metadata.csv'), encoding = 'utf-8', low_memory=False)
 
 # Add a column showing how to get to each image from here.
@@ -125,12 +130,14 @@ hash.update(b'abcdefG')
 checksum = hash.hexdigest()
 print(f'abcdefG: {checksum}')
 
-# We have further reading available!
+# Note that a small change in the data will result in a completely different checksum.
+
+# Review the 'further-reading.ipynb' notebook for more info on computing MD5 checksums.
 
 # %%
-# Create function for MD5 checksums
+# Create functions for MD5 checksums
 
-# Simple, but could cause OOM error on a massive file
+# For use with reading files from disk
 def file_md5_checksum(file_path):
     hash = hashlib.md5()
     with open(file_path, "rb") as f:
@@ -139,10 +146,13 @@ def file_md5_checksum(file_path):
     checksum = hash.hexdigest()
     return checksum
 
+# For use with decoded PIL image objects
 def pil_md5_checksum(image):
     hash = hashlib.md5()
     buffer = BytesIO()
-    image.save(buffer, format=image.format)
+    # Normalize to RGB and consistent encoding
+    img = image.convert("RGB")
+    img.save(buffer, format="TIFF")
     hash.update(buffer.getvalue())
     checksum = hash.hexdigest()
     return checksum
@@ -152,12 +162,12 @@ def pil_md5_checksum(image):
 # Run MD5 checksum on Shaggy's and Kydoimos datasets
 shaggy_df['md5'] = shaggy_df['rel_file_path'].apply(file_md5_checksum)
 kydoimos_df['md5'] = kydoimos_df['image'].apply(pil_md5_checksum)
-# kydoimos_df['md5'] = [compute_md5(image) for image in kydoimos['train']['image']]
 
 # %%
 kydoimos_df.head(3)
 
 # %%
+# Now that we have the MD5 checksums, we can save them to a CSV file for future use (omitting the 'image' column).
 kydoimos_df.drop(columns=['image']).to_csv('kydoimos.csv', index=False)
 
 # %%
@@ -184,12 +194,17 @@ merge_df.head()
 #
 # As a shortcut for this class, we'll skip the detective work and get to the solution:
 #
-# *The intrinsic metadata is changed when the image is loaded as a PIL object, which was done automatically with the Kydoimos dataset by the `datasets` library.*
+# *The intrinsic metadata is dropped when the image is decoded as a PIL object.*
 #
-# To address this, we'll load Shaggy's dataset with PIL before taking MD5s again.
+# The pixel contents might not be different, but the file representation did. When saving to bytes for hashing, each image was re-encoded, rewriting the metadata, which changed the binary content. 
+#
+# To make a good comparison, we'll load Shaggy's dataset into Pillow objects the same way before hashing.
 
 # %%
-# Expect UnidentifiedImageError: cannot identify image file 'C:\\...\\all-hands-2024-data-workshop\\Shaggy\\images\\amalfreda_0.tif'
+# The plan for this cell is to load the images from disk into the dataframe as PIL objects and compute the MD5 checksums.
+# Expect this cell to yield an UnidentifiedImageError: cannot identify image file '<path-to->/amalfreda_0.tif'
+# We also got a warning stating "UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. 
+
 shaggy_df['image'] = shaggy_df['rel_file_path'].apply(lambda x: Image.open(x)) 
 
 shaggy_df['pil_md5'] = shaggy_df['image'].apply(pil_md5_checksum)
@@ -197,14 +212,12 @@ shaggy_df['pil_md5'] = shaggy_df['image'].apply(pil_md5_checksum)
 shaggy_df
 
 # %%
+# To get a fresh preview at the dataframe:
 shaggy_df
 
 # %%
-img = Image.open('../Shaggy/images/amalfreda_0.tif') # try with amalfreda_1.tif, which will work
-img
-
-# %%
-img = Image.open('../Shaggy/images/amalfreda_1.tif') # try with amalfreda_1.tif, which will work
+# We can try to open the individual image causing a problem.
+img = Image.open('../../Shaggy/images/amalfreda_0.tif') # try with amalfreda_1.tif, which will work
 img
 
 
@@ -230,7 +243,16 @@ shaggy_df['valid_image'] = shaggy_df['rel_file_path'].apply(verify_image)
 # %%
 # Filter the dataframe to remove rows with corrupt images
 shaggy_df = shaggy_df[shaggy_df['valid_image']]
-# Now go back to apply the `pil_md5_checksum` function
+
+# %%
+# Now we can apply the `pil_md5_checksum` function (same as the code that failed above)
+shaggy_df['image'] = shaggy_df['rel_file_path'].apply(lambda x: Image.open(x)) 
+
+shaggy_df['pil_md5'] = shaggy_df['image'].apply(pil_md5_checksum)
+
+shaggy_df
+
+# We can see below that the "md5" and "pil_md5" values for each entry are different. This is because the "md5" column was computed from the file on disk, while the "pil_md5" column was computed from the PIL image object. The PIL image object may have been modified in memory, which is why the checksums differ.
 
 # %%
 kydoimos_df.info()
@@ -241,6 +263,7 @@ shaggy_df.info()
 # After fix, 107 in shaggy
 
 # %%
+# Retry the merge using the PIL checksums for each image
 merge_df = pd.merge(shaggy_df, kydoimos_df, left_on="pil_md5", right_on="md5", how="inner", suffixes=("_shaggy", "_kydoimos"))
 merge_df
 
@@ -251,23 +274,35 @@ merge_df.info()
 merge_df['file_name'].nunique() # But Shaggy had 107 images ... where's the extra one hiding? Did something change size?
 
 # %%
+# Let's find the images that don't match between the two datasets and display them
+
 from IPython.display import display
-matches = shaggy_df.loc[~shaggy_df['pil_md5'].isin(merge_df['pil_md5']), :]
-matches['image'].apply(display)
-# shaggy_df.loc[~shaggy_df['pil_md5'].isin(merge_df['pil_md5']), 'image'].apply(display)
+
+mismatches = shaggy_df.loc[~shaggy_df['pil_md5'].isin(merge_df['pil_md5']), :]
+mismatches['image'].apply(display)
+
 
 # %% [markdown]
 # ### Looks like some of Shaggy's personal photos found their way into the dataset while he was organizing things ...
 
 # %%
+# We can remove the images that don't match from the Shaggy dataframe
 shaggy_df = shaggy_df.drop(shaggy_df.loc[~shaggy_df['pil_md5'].isin(merge_df['pil_md5'])].index)
 
 
 # %%
-merge_df
+shaggy_df.info() # Now the number of images in Shaggy's dataframe matches the number that were merged.
 
 # %%
-# We have more images in the merged dataframe compared to either input dataframe. There must be duplicates.
+merge_df['file_name'].nunique()
+
+# %%
+merge_df.info()
+
+# However, we have more images in the merged dataframe compared to either input dataframe. There must be duplicates.
+
+# %%
+# We can identify the duplicates using the MD5 checksums for the PIL object form of each image.
 shaggy_dup_mask = shaggy_df.duplicated(subset="pil_md5", keep=False)
 shaggy_dups = shaggy_df[shaggy_dup_mask].sort_values(by='pil_md5')
 shaggy_dups.info()
@@ -278,6 +313,7 @@ kydoimos_dups = kydoimos_df[kydoimos_dup_mask].sort_values(by="md5")
 kydoimos_dups.info()
 
 # %%
+# Look at a sample of the duplicates
 kydoimos_dups.head(8)
 
 # %% [markdown]
@@ -297,4 +333,8 @@ both_splits = grouped[grouped.apply(lambda x: 'test' in x and 'train' in x)]
 print(both_splits.size)
 
 # %% [markdown]
-# That's the final nail in the coffin for Shaggy's dataset. We are going to need to start over!
+# This shows that there is data leakage between the test and train splits.
+# That's the final nail in the coffin for Shaggy's dataset. 
+# At this point, it will be simpler to start over from Kydoimos and organize a new dataset.
+
+# %%
