@@ -196,7 +196,7 @@ merge_df.head()
 #
 # *The intrinsic metadata is dropped when the image is decoded as a PIL object.*
 #
-# The pixel contents might not be different, but the file representation did. When saving to bytes for hashing, each image was re-encoded, rewriting the metadata, which changed the binary content. 
+# The pixel contents might not be different, but the _file representation_ has changed. When saving to bytes for hashing, each image was re-encoded, rewriting the metadata, which changed the binary content. 
 #
 # To make a good comparison, we'll load Shaggy's dataset into Pillow objects the same way before hashing.
 
