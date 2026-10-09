@@ -8,7 +8,7 @@ How to use this repo post-workshop: If you missed the workshop or would like to 
 
 ### Tutorial step-by-step instructions
 
-1. Clone this repository and follow the [pre-workshop set up instructions](#before-the-workshop) to prepare your local environment.
+1. Clone this repository and follow the [pre-workshop setup instructions](#before-the-workshop) to prepare your local environment.
 2. Read the [Key Learning Objectives](#key-learning-objectives).
 3. Read the [Story of the Workshop](#story-of-the-workshop).
 4. Follow along with the [workshop lesson](https://youtu.be/71Ww42ddz9s).
@@ -31,7 +31,7 @@ How to use this repo post-workshop: If you missed the workshop or would like to 
 The key packages used in this workshop are described below, organized by their use-cases.
 
 - Data wrangling: `pandas` (DataFrames, the data structure), `datasets` (for accessing the data from Hugging Face).
-- Notebooks (where the work is done): `jupyterlab`, `ipywidgets` .
+- Notebooks (where the work is done): `jupyterlab`, `ipywidgets`.
     - The notebooks can be run in VSCode or by launching Jupyter from the command line (as done in the tutorial itself).
 - Image handling and visualizations: `pillow`, `seaborn`.
 - Machine learning tools: `scikit-learn`, `opencv`.
