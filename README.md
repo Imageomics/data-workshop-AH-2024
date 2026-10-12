@@ -33,8 +33,8 @@ The key packages used in this workshop are described below, organized by their u
 - Data wrangling: `pandas` (DataFrames, the data structure), `datasets` (for accessing the data from Hugging Face).
 - Notebooks (where the work is done): `jupyterlab`, `ipywidgets`.
     - The notebooks can be run in VSCode or by launching Jupyter from the command line (as done in the tutorial itself).
-- Image handling and visualizations: `pillow`, `seaborn`.
-- Machine learning tools: `scikit-learn`, `opencv`.
+- Image handling and visualizations: `opencv`, `pillow`, `seaborn`.
+- Machine learning tools: `scikit-learn`.
 
 ## During the Workshop
 
