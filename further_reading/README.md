@@ -25,17 +25,20 @@ For more on this, see the `further_reading` notebook.
 This ensures the reproducibility of your dataset and that appropriate credit is given (in both the academic and legal senses). It also provides you peace of mind; in the event of a corrupted file or other image-altering event, maintaining the link back to the original image ensures that the information is recoverable. 
 
 ### Summary
+
 - Open files to be compared with the same method.
 - Use MD5 checksum to compare content of data and intrinsic metadata.
 - Use a library like PIL to read images to ensure they're not accidentally corrupted.
 
 
 ## Resources
+
 - [Imageomics Guide](https://imageomics.github.io/Imageomics-guide/)
-    - [HF templates](https://imageomics.github.io/Imageomics-guide/wiki-guide/About-Templates/): Dataset and Model Card templates for Imageomics Datasets and Models. These include some general keywords, grant acknowledgement, and general guidance and recommendations for various sections, along with some HF-flavored markdown tips.
+    - [Hugging Face templates](https://imageomics.github.io/Imageomics-guide/wiki-guide/About-Templates/): Dataset and Model Card templates for Imageomics Datasets and Models. These include some general keywords, grant acknowledgement, and general guidance and recommendations for various sections, along with some HF-flavored markdown tips.
         - We covered the sections of a Dataset Card pertaining to information about the data itself, but don't forget about the other sections for a real dataset or model!
         - The `yaml` portion at the top is a place to add keywords and other useful information to help index your model or dataset in searches on Hugging Face (eg., by size, task, and license).
-        - Adding an appropriate [license](https://imageomics.github.io/Imageomics-guide/wiki-guide/GitHub-Repo-Guide/#license) and citation allow others to re-use and then properly cite your model or dataset more easily.
+        - Adding an appropriate [license](https://imageomics.github.io/Imageomics-guide/wiki-guide/Hugging-Face-Repo-Guide/#license) and citation allow others to re-use and then properly cite your model or dataset more easily.
     - [GitHub](https://imageomics.github.io/Imageomics-guide/wiki-guide/GitHub-Repo-Guide/) and [Hugging Face](https://imageomics.github.io/Imageomics-guide/wiki-guide/Hugging-Face-Repo-Guide/) Pages: Repo guides, Workflows, and more!
     - [FAIR Guide](https://imageomics.github.io/Imageomics-guide/wiki-guide/FAIR-Guide/): Includes checklists to ensure code, model, and data repositories align with FAIR principles and best-practices for reproducibility.
-- Overview and further reading on [FAIR Principles](https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair) from the [Turing Way](https://book.the-turing-way.org/).
+    - [Helpful Tools for your Workflow](https://imageomics.github.io/Imageomics-guide/wiki-guide/Helpful-Tools-for-your-Workflow/): Collection of tools used regularly by our community, with a particular emphasis on FAIR and reproducibility. In relation to this workshop, we highlight two [FAIR Data Access and Validation](https://imageomics.github.io/Imageomics-guide/wiki-guide/Helpful-Tools-for-your-Workflow/#fair-data-access-and-validation) tools, [cautious-robot](https://github.com/Imageomics/cautious-robot) and [sum-buddy](https://github.com/Imageomics/sum-buddy), designed to head off and address many issues highlighted in the workshop.
+- Overview and further reading on [FAIR Principles](https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair) from the [Turing Way](https://book.the-turing-way.org/). See also the other references listed in the Imageomics [FAIR Guide](https://imageomics.github.io/Imageomics-guide/wiki-guide/FAIR-Guide/).

@@ -1,10 +1,18 @@
 # Mastering Data Management Workshop - All Hands 2024 [![DOI](https://zenodo.org/badge/784343261.svg)](https://doi.org/10.5281/zenodo.17429276)
-Repository for Mastering Data Management Workshop at the Imageomics All Hands 2024.
 
-- **When**: April 16th, 8:30am to 11:45am ET.
-- **Where**: 320 TDAI Ideation Zone, Pomerene Hall.
+This data training was originally presented as an in-person, interactive session at the Imageomics All Hands in 2024: the Mastering Data Management Workshop. It runs through an initial analysis of a simplified dataset, filling in a dataset card as the data is explored, cleaned, and prepared for training. All materials used for the workshop are provided in this repository to allow for continued, asynchronous re-use. To complete the training, follow the below instructions.
 
-This session will be interactive; bring your laptop ready to go (as described below).
+## Post-Workshop Use
+
+How to use this repo post-workshop: If you missed the workshop or would like to review the materials, there are both blank and complete versions of the notebooks completed during the workshop available in this repo. There is also a [`further_reading` folder](https://github.com/Imageomics/data-workshop-AH-2024/tree/main/further_reading) with more information on topics covered during the workshop, as well as resources to learn more.
+
+### Tutorial step-by-step instructions
+
+1. Clone this repository and follow the [pre-workshop setup instructions](#before-the-workshop) to prepare your local environment.
+2. Read the [Key Learning Objectives](#key-learning-objectives).
+3. Read the [Story of the Workshop](#story-of-the-workshop).
+4. Follow along with the [workshop lesson](https://youtu.be/71Ww42ddz9s).
+5. Review extra notes in the [Further Reading](further_reading) section, which contains pointers and links to other resources.
 
 ## Before the Workshop
 
@@ -17,6 +25,16 @@ This session will be interactive; bring your laptop ready to go (as described be
 3. Clone this repository to the home directory of your local machine.
 
 > Note: We will use Unix commands in the workshop. If you are using Windows, you can use Git Bash to run these commands.
+
+### Key Packages
+
+The key packages used in this workshop are described below, organized by their use-cases.
+
+- Data wrangling: `pandas` (DataFrames, the data structure), `datasets` (for accessing the data from Hugging Face).
+- Notebooks (where the work is done): `jupyterlab`, `ipywidgets`.
+    - The notebooks can be run in VSCode or by launching Jupyter from the command line (as done in the tutorial itself).
+- Image handling and visualizations: `opencv`, `pillow`, `seaborn`.
+- Machine learning tools: `scikit-learn`.
 
 ## During the Workshop
 
@@ -66,13 +84,7 @@ This new CSV is passed to Velma, along with the Dataset Card from the initial ex
 
 The `Velma` folder is entirely self-contained, though the README and data file (`kydoimos.csv`) are created in the first two parts of the workshop. There are complete versions of the README and notebook as done during the workshop (as well as an earlier completed version with a paired `py` file). A recording of this part of the workshop--where we explore the data, clean it (standardizing terms and removing duplicates), and generate splits--can be found on the [Imageomics YouTube Channel](https://www.youtube.com/@ImageomicsInstitute/videos); it is an hour and 15 minutes long.
 
-
-# Post-Workshop Use
-
-How to use this repo post-workshop: If you missed the workshop or would like to review the materials, there are both blank and complete versions of the notebooks completed during the workshop available in this repo. There is also a [`further_reading` folder](https://github.com/Imageomics/data-workshop-AH-2024/tree/main/further_reading) with more information on topics covered during the workshop, as well as resources to learn more.
-
-
-# Images
+## Images
 
 All images in [`Shaggy/images/`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images) are public domain, sourced from [(Hoyal Cuthill et al., 2019)](https://doi.org/10.5061/dryad.2hp1978), _**except**_ [`thelxiopeia_13.tif`](https://github.com/Imageomics/data-workshop-AH-2024/blob/main/Shaggy/images/thelxiopeia_13.tif) which was sourced from [this website](https://www.scoobydudes.com/episode-17-scoobra-kadoobra) and is copyrighted by [Hanna-Barbera and Warner Bros. Entertainment](https://scoobydoo.fandom.com/wiki/Scoobypedia:Legal_Disclaimer).
 
